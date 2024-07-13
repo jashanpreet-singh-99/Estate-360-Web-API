@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/EState-360.Web-API.props" />
+</Project>

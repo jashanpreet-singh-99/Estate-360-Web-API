@@ -1,0 +1,15 @@
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/bin/Debug/net7.0/EState-360.Infrastructure.deps.json
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/bin/Debug/net7.0/EState-360.Infrastructure.dll
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/bin/Debug/net7.0/EState-360.Infrastructure.pdb
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/bin/Debug/net7.0/EState-360.Core.dll
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/bin/Debug/net7.0/EState-360.Core.pdb
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/EState-360.Infrastructure.csproj.AssemblyReference.cache
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/EState-360.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/EState-360.Infrastructure.AssemblyInfoInputs.cache
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/EState-360.Infrastructure.AssemblyInfo.cs
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/EState-360.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/EState-360.Infrastructure.csproj.CopyComplete
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/EState-360.Infrastructure.dll
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/refint/EState-360.Infrastructure.dll
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/EState-360.Infrastructure.pdb
+/Users/ck-intosh/ASP.NET/EState-360/EState-360.Infrastructure/obj/Debug/net7.0/ref/EState-360.Infrastructure.dll
