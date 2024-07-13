@@ -1,0 +1,150 @@
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+Generated_Code/
+
+# Build directories
+bin/
+obj/
+out/
+publish/
+*.localhistory/
+
+# Logs
+*.log
+*.tlog
+*.wrn
+*.err
+*.liblog
+*.vspscc
+
+# Local NuGet folders
+**/packages/
+*.nupkg
+
+# Test results
+TestResults/
+*.TestResults/
+
+# Web stuff
+*.publishsettings
+*.pubxml
+*.publishproj
+**/appsettings.json
+
+# IDE specific
+.vscode/
+.idea/
+.vscode/*
+
+# Configuration files
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+appsettings.Test.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dotnet pack generated files
+*.nupkg
+*.snupkg
+*.nuspec
+*.symbols.nupkg
+
+# Coverage
+coverage/
+*.lcov
+*.lcov.info
+
+# Stylecop
+stylecop.json
+
+# Resharper
+_Resharper.Caches
+
+# Rider
+.idea/
+.idea/*
+
+# DocFx build directories
+_obj/
+
+# Azure Pipelines
+.vsts/
+.vsts/*
+
+# GitHub Actions
+.github/
+.github/*
+
+# Mac specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Entity Framework
+*.efmodel
+*.efcore.json
+
+# SQL Server
+*.mdf
+*.ldf
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Windows Image File
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycler folder
+$RECYCLE.BIN/
+
+# Build outputs
+bin/
+obj/
+build/
+debug/
+release/
+
+# Publish outputs
+publish/
+artifacts/
