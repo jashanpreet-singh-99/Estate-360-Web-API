@@ -18,9 +18,9 @@ namespace EState_360.Web_API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var listings = _listingService.GetAllListings();
+            var listings = await _listingService.GetAllListings();
 
             _logger.LogInformation("GET ALL: ", listings);
 
@@ -28,9 +28,9 @@ namespace EState_360.Web_API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(string id)
         {
-            var listing = _listingService.GetListingById(id);
+            var listing = await _listingService.GetListingById(id);
             if (listing == null)
             {
                 return NotFound();
@@ -39,9 +39,9 @@ namespace EState_360.Web_API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Listing listing)
+        public async Task<IActionResult> Create(Listing listing)
         {
-            _listingService.AddListing(listing);
+            await _listingService.AddListing(listing);
 
             _logger.LogInformation("CREATE:", listing);
             
@@ -49,7 +49,7 @@ namespace EState_360.Web_API.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Listing listing)
+        public async Task<IActionResult> Update(string id, Listing listing)
         {
             if (id != listing.Id)
             {
@@ -58,14 +58,14 @@ namespace EState_360.Web_API.Controllers
 
             _logger.LogInformation("Update: ", id);
 
-            _listingService.UpdateListing(listing);
+            await _listingService.UpdateListing(listing);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
-            _listingService.DeleteListing(id);
+            await _listingService.DeleteListing(id);
             return NoContent();
         }
     }

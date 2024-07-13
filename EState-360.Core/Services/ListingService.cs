@@ -11,29 +11,29 @@ namespace EState_360.Core.Services {
             _listingRepository = listingRepository;
         }
 
-        public IEnumerable<Listing> GetAllListings()
+        public Task<IEnumerable<Listing>> GetAllListings()
         {
             return _listingRepository.GetAll();
         }
 
-        public Listing GetListingById(int id)
+        public Task<Listing> GetListingById(string id)
         {
             return _listingRepository.GetById(id);
         }
 
-        public void AddListing(Listing listing)
+        public Task AddListing(Listing listing)
         {
-            _listingRepository.Add(listing);
+            return _listingRepository.Add(listing);
         }
 
-        public void UpdateListing(Listing listing)
+        public Task UpdateListing(Listing listing)
         {
-            _listingRepository.Update(listing);
+            return _listingRepository.Update(listing);
         }
 
-        public void DeleteListing(int id)
+        public Task DeleteListing(string id)
         {
-            _listingRepository.Delete(id);
+            return _listingRepository.Delete(id);
         }
     }
 }

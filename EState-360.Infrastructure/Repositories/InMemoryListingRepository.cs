@@ -1,22 +1,19 @@
 using EState_360.Core.Entities;
-using EState_360.Core.Repositories;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace EState_360.Infrastructure.Repositories
 {
-    public class InMemoryListingRepository : IListingRepository
+    public class InMemoryListingRepository
     {
-        private readonly List<Listing> _listings = new List<Listing>();
+        private readonly List<Listing> _listings = new();
 
         public IEnumerable<Listing> GetAll()
         {
             return _listings;
         }
 
-        public Listing GetById(int id)
+        public Listing GetById(string id)
         {
-            return _listings.FirstOrDefault(l => l.Id == id) ?? new Listing();
+            return _listings.FirstOrDefault(l => l.Id == id) ?? new Listing { Id = "-1"};
         }
 
         public void Add(Listing listing)
@@ -34,7 +31,7 @@ namespace EState_360.Infrastructure.Repositories
             }
         }
 
-        public void Delete(int id)
+        public void Delete(string id)
         {
             var listing = GetById(id);
             if (listing != null)

@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>EState_360.Web_API</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.20" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
@@ -12,5 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\EState-360.Core\EState-360.Core.csproj" />
     <ProjectReference Include="..\EState-360.Infrastructure\EState-360.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Driver, Version=2.27.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
 </Project>
