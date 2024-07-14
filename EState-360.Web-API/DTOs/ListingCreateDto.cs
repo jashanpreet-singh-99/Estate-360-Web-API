@@ -1,10 +1,7 @@
-namespace EState_360.Core.Entities
+﻿namespace EState_360.Web_API.DTOs
 {
-    public class Listing
-    {
-        [Newtonsoft.Json.JsonProperty(PropertyName = "id")]
-        public string? Id { get; set; } = null;
-
+	public class ListingCreateDto
+	{
         [Newtonsoft.Json.JsonProperty(PropertyName = "name")]
         public required string Name { get; set; }
 
@@ -38,16 +35,8 @@ namespace EState_360.Core.Entities
         [Newtonsoft.Json.JsonProperty(PropertyName = "type")]
         public string Type { get; set; } = "Rent";
 
-        [Newtonsoft.Json.JsonProperty(PropertyName = "rating")]
-        public decimal Rating { get; set; } = 0;
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "ratingCount")]
-        public int RatingCount { get; set; } = 0;
-
-        [Newtonsoft.Json.JsonProperty(PropertyName = "postedOn")]
-        public DateTime PostedOn { get; set; }
-
         [Newtonsoft.Json.JsonProperty(PropertyName = "price")]
         public decimal Price { get; set; } = 1;
     }
 }
+

@@ -1,26 +1,38 @@
 using EState_360.Core.Repositories;
 using EState_360.Core.Services;
 using EState_360.Infrastructure.Repositories;
-using MongoDB.Driver;
+using EState_360.Web_API.Mappings;
+using EState_360.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // builder.Services.AddScoped<IListingRepository, InMemoryListingRepository>(); // Switched to CosmosDB
+builder.Services.AddScoped<IListingRepository, CosmosMongoDbRepository>();
 builder.Services.AddScoped<ListingService>();
 
 // CosmosDB Config
-builder.Services.AddSingleton<IMongoClient>(s =>
+builder.Services.AddSingleton(s =>
 {
     var configuration = s.GetRequiredService<IConfiguration>();
-    return new MongoClient(configuration["CosmosDb:ConnectionString"]); ;
+    return new MongoDbContext(configuration);
 });
 
-builder.Services.AddScoped<IListingRepository>(s =>
-{
-    var mongoClient = s.GetRequiredService<IMongoClient>();
-    return new CosmosMongoDbRepository(mongoClient, builder.Configuration["CosmosDb:DatabaseName"]!, builder.Configuration["CosmosDb:CollectionName"]!);
-});
+
+//builder.Services.AddSingleton<IMongoClient>(s =>
+//{
+//    var configuration = s.GetRequiredService<IConfiguration>();
+//    return new MongoClient(configuration["CosmosDb:ConnectionString"]); ;
+//});
+
+//builder.Services.AddScoped<IListingRepository>(s =>
+//{
+//    var mongoClient = s.GetRequiredService<IMongoClient>();
+//    return new CosmosMongoDbRepository(mongoClient, builder.Configuration["CosmosDb:DatabaseName"]!, builder.Configuration["CosmosDb:CollectionName"]!);
+//});
+
+// Add Auto Mapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

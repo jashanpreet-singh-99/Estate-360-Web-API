@@ -1,5 +1,7 @@
 using EState_360.Core.Entities;
 using EState_360.Core.Repositories;
+using EState_360.Infrastructure.Data;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace EState_360.Infrastructure.Repositories
@@ -8,10 +10,9 @@ namespace EState_360.Infrastructure.Repositories
     {
         private readonly IMongoCollection<Listing> _listings;
 
-        public CosmosMongoDbRepository(IMongoClient mongoClient, string databaseName, string collectionName)
+        public CosmosMongoDbRepository(MongoDbContext dbContext)
         {
-            var database = mongoClient.GetDatabase(databaseName);
-            _listings = database.GetCollection<Listing>(collectionName);
+            _listings = dbContext.Listings;
         }
 
         public async Task<IEnumerable<Listing>> GetAll()
@@ -26,6 +27,7 @@ namespace EState_360.Infrastructure.Repositories
 
         public async Task Add(Listing listing)
         {
+            listing.Id = ObjectId.GenerateNewId().ToString();
             await _listings.InsertOneAsync(listing);
         }
 

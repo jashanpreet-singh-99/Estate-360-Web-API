@@ -23,6 +23,9 @@ namespace EState_360.Core.Services {
 
         public Task AddListing(Listing listing)
         {
+            listing.PostedOn = DateTime.UtcNow;
+
+
             return _listingRepository.Add(listing);
         }
 

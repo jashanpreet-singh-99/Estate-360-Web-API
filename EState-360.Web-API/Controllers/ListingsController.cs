@@ -1,6 +1,8 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using EState_360.Core.Entities;
 using EState_360.Core.Services;
+using EState_360.Web_API.DTOs;
 
 namespace EState_360.Web_API.Controllers
 {
@@ -10,11 +12,16 @@ namespace EState_360.Web_API.Controllers
     {
         private readonly ILogger<ListingsController> _logger;
         private readonly ListingService _listingService;
+        private readonly IMapper _mapper;
 
-        public ListingsController(ListingService listingService, ILogger<ListingsController> logger)
+        public ListingsController(
+            ListingService listingService,
+            ILogger<ListingsController> logger,
+            IMapper mapper)
         {
             _listingService = listingService;
             _logger = logger;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -39,8 +46,11 @@ namespace EState_360.Web_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Listing listing)
+        public async Task<IActionResult> Create([FromBody] ListingCreateDto listingDto)
         {
+            // convert listingDto to listing object
+            var listing = _mapper.Map<Listing>(listingDto);
+
             await _listingService.AddListing(listing);
 
             _logger.LogInformation("CREATE:", listing);
