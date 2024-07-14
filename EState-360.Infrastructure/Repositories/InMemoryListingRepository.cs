@@ -13,7 +13,7 @@ namespace EState_360.Infrastructure.Repositories
 
         public Listing GetById(string id)
         {
-            return _listings.FirstOrDefault(l => l.Id == id) ?? new Listing { Id = "-1"};
+            return _listings.FirstOrDefault(l => l.Id == id) ?? new Listing { Id = "-1", Name = "", Region = "", Type="Sell"};
         }
 
         public void Add(Listing listing)
