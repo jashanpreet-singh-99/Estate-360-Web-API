@@ -38,5 +38,10 @@ namespace EState_360.Core.Services {
         {
             return _listingRepository.Delete(id);
         }
+
+        public Task<IEnumerable<Listing>> GetTopListings(int count)
+        {
+            return _listingRepository.GetTopListings(count);
+        }
     }
 }

@@ -78,6 +78,17 @@ namespace EState_360.Web_API.Controllers
             await _listingService.DeleteListing(id);
             return NoContent();
         }
+
+        [HttpGet("top")]
+        public async Task<IActionResult> GetTopListings([FromQuery] int? count = 6)
+        {
+            if (count > 10)
+            {
+                count = 10;
+            }
+            var topListings = await _listingService.GetTopListings(count ?? 6);
+            return Ok(topListings);
+        }
     }
 }
 

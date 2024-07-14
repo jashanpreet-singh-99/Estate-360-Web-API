@@ -17,7 +17,8 @@ namespace EState_360.Infrastructure.Repositories
 
         public async Task<IEnumerable<Listing>> GetAll()
         {
-            return await _listings.Find(listing => true).ToListAsync();
+            // Placed limit to same resources.
+            return await _listings.Find(Builders<Listing>.Filter.Empty).Limit(4).ToListAsync();
         }
 
         public async Task<Listing> GetById(string id)
@@ -39,6 +40,15 @@ namespace EState_360.Infrastructure.Repositories
         public async Task Delete(string id)
         {
             await _listings.DeleteOneAsync(listing => listing.Id == id);
+        }
+
+        public async Task<IEnumerable<Listing>> GetTopListings(int count)
+        {
+            return await _listings
+                .Find(Builders<Listing>.Filter.Empty)
+                .SortByDescending(p => p.Rating)
+                .Limit(count)
+                .ToListAsync();
         }
     }
 }
