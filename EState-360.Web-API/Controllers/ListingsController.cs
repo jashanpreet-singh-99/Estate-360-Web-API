@@ -89,6 +89,16 @@ namespace EState_360.Web_API.Controllers
             var topListings = await _listingService.GetTopListings(count ?? 6);
             return Ok(topListings);
         }
+
+        [HttpPost("search")]
+        public async Task<IActionResult> Search([FromBody] ListingSearch listingSearch)
+        {
+            var listings = await _listingService.SearchListings(listingSearch);
+
+            _logger.LogInformation("Search: ", listingSearch);
+
+            return Ok(listings);
+        }
     }
 }
 

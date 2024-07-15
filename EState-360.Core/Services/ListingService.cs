@@ -43,5 +43,10 @@ namespace EState_360.Core.Services {
         {
             return _listingRepository.GetTopListings(count);
         }
+
+        public Task<IEnumerable<Listing>> SearchListings(ListingSearch listingSearch)
+        {
+            return _listingRepository.SearchListings(listingSearch);
+        }
     }
 }

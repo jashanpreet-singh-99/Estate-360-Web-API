@@ -48,6 +48,6 @@ namespace EState_360.Core.Entities
         public DateTime PostedOn { get; set; }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "price")]
-        public decimal Price { get; set; } = 1;
+        public int Price { get; set; } = 1;
     }
 }

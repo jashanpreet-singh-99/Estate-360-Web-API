@@ -10,5 +10,6 @@ namespace EState_360.Core.Repositories
         Task Update(Listing listing);
         Task Delete(string id);
         Task<IEnumerable<Listing>> GetTopListings(int count);
+        Task<IEnumerable<Listing>> SearchListings(ListingSearch listingSearch);
     }
 }
